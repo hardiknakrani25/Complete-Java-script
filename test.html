@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+String <input type="text" id="string">
+<input type="button" onclick="reverse()" value="Submit">
+<div id="output"></div>
+<div id="msg"></div>
+<div id="msg1"></div>
+<script>
+    function reverse() {
+    var str=document.getElementById('string').value;
+    
+    var str1=str.split("");
+    var str2=str1.join(" ");
+    var j=str2.length-1;
+    var str3=[];
+    var count=0;
+    var count1=0;
+    for(i=0;i<str2.length;i++)
+    {
+        count=0
+        if(str2[i]==str2[j])
+        {
+            j--;
+            count=1;
+        }
+    }
+    if(count==1)
+    {
+        document.getElementById('output').innerHTML=str2+"<br>";
+    }
+    var str4=str.slice(1,4);
+    var k=str4.length-1
+    for(i=0;i<str4.length;i++)
+    {
+        if(str2[i]==str2[k])
+        {
+            k--;
+            count=1;
+        }
+    }
+    document.getElementById('msg').innerHTML=str2[0]+" "+str4+" "+str2[str2.length-1];
+    document.getElementById('msg1').innerHTML=str;
+    }
+    
+</script>
+</body>
+</html>

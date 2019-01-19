@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+           javascript DOM example 
+        </title>
+    </head>
+    <body>
+
+        <div id="output">javascript</div>
+        <script>
+        var array=['hardik','parth','manthan']
+        var userName=prompt("What is your Name?");
+        var check=array.indexOf(userName);
+        var res=document.getElementById('output');
+        check > -1 ? alert("welcome "+userName) : alert("user is not available");
+
+
+       if(check>-1)
+       res.innerText="welcome "+userName;
+        
+       // document.write("hardik");
+        //console.dir(document);
+        
+        </script>
+    </body>
+</html>

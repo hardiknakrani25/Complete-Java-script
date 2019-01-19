@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AJAX</title>
+        
+</head>
+<body>
+    <div id="output">Async javascript</div>
+    
+    <input type="text" id="guestName">+
+    <input type="number" id="guestNum" value="0">
+    <input type="button" value="add">
+    
+    <script>
+    window.onload=init;
+
+
+function init() {
+
+loadJSON(); 
+
+    // loadJSON(function(response){
+    // console.log(response);
+
+    // });
+}
+
+function loadJSON(callbacks) {
+    var xHR=new XMLHttpRequest;
+    xHR.onreadystatechange=function(){
+        
+        console.log(this.responseText);
+        
+    }
+    xHR.open('GET','https://api.myjson.com/bins/15f0yw',true);
+    xHR.send();
+    console.log(xHR);
+    
+}
+
+</script>
+</body>
+</html>

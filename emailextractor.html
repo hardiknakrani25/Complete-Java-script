@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Email Extractor</title>
+
+</head>
+<body>
+<form name="myForm">
+
+<textarea name="txtarea" rows="20" cols="100"></textarea>
+<br>
+<input type="button" onclick="extract()" value="Get Emails">
+<br>
+<textarea name="txtarea2" rows="20" cols="100"></textarea>
+</form>
+
+<!-- <div id="output">Complete JavaScript Course </div>
+<form name="myForm">
+    <textarea name="txtarea" rows=12 cols=100></textarea>
+    <input type="button" onclick="lookUp()" value="get emails">
+    <textarea name="txtarea2" rows=12 cols=100></textarea>
+</form> -->
+
+<script>
+    var emailregx = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z.]+)/ig;
+function extract() {
+    var output=document.myForm.txtarea.value;
+    console.log(output);
+
+    var reg=output.match(emailregx);
+    console.log("output of emails : "+reg);
+
+    var holder=[];
+for (let index = 0; index < reg.length; index++) {
+ if (holder.indexOf(reg[index])) {
+
+     holder.push(reg[index]);
+     
+ }
+
+    
+}
+console.log(holder);
+
+document.myForm.txtarea2.value=holder;
+}
+</script>    
+</body>
+</html>

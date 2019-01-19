@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>Shopping List</title>
+
+</head>
+<body>
+    <div>
+        <input type="text" id="addItem">
+        <input type="button" id="addNew" value="Add to List">
+    </div>
+    <div id="output">
+        <h1>
+            Shopping List
+        </h1>
+        <ol id="sList">
+
+
+
+        </ol>
+    </div>
+    <script>
+   document.getElementById("addNew").onclick=function (){
+       addOne();
+   }
+
+   function addOne() {
+
+       var item=document.getElementById("addItem").value;
+       console.log("addOne item function :"+item);
+       var li=document.createElement('li');
+       li.appendChild(document.createTextNode(item));
+       console.log(li); 
+
+ document.getElementById('sList').appendChild(li);
+       
+       
+   }
+    </script>
+</body>
+</html>

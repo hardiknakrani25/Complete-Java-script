@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+</head>
+<body onload="startimage()">
+    <div id="wrapper">Complete javascript course</div>
+    <img id="myimg">
+
+    <script>
+    var imageplace=0;
+    var images=['1','2','3','4','5','6','7'];
+    var imagesC=['111','222','ff0000','00ff00','0000ff','000','333'];
+
+
+function startimage() {
+    setInterval(swapeimage,1000);
+}
+
+    function swapeimage() {
+        imageplace++;
+
+        if (imageplace>=images.length) {
+            imageplace=0;
+        }
+        var myimage=document.getElementById('myimg');
+        myimage.src="http://via.placeholder.com/350x150/"+imagesC[imageplace]+"/fff?text=image"+images[imageplace];
+
+    }
+    </script>
+</body>
+</html>

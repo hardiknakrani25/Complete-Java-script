@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Event list</title>
+    <style>
+            td {
+                border: 1px solid #ddd;
+                padding: 10px;
+            }
+            
+            td:first-child {
+                width: 300px;
+            }
+        </style>
+</head>
+<body>
+    <h1>Friends List</h1>
+    <input type="text" id="addF">
+    <input type="button" value="Add Friend" id="addbtn">
+    <div id="output"></div>
+<script>
+
+var array=["hardik","jay","harshit","akshay","abhay","akhil","meet"];
+window.onload=build;
+
+function build() {
+    var html="<h1>Click Table</h1><table>"
+
+    for (var index = 0; index < array.length; index++) {
+html +='<tr id="id'+index+'" data-row="'+index+'"><td>'+array[index]+'</td><td><a href="#" data-action="delete">DELETE</td><td><a href="#" data-action="edit">EDIT</td></tr>';
+        
+    }
+   // document.querySelector('.output').innerHTML = html;
+    html +='</table>'
+    console.log(html);
+    //document.querySelector('.output').innerHTML=html;
+
+document.getElementById('output').innerHTML=html;
+
+var dad=document.querySelectorAll('[data-action="delete"]');
+
+console.log(dad);
+
+for(var x=0;x<dad.length;x++){
+    dad[x]=addEventListener('click',function(){
+        console.log(this);
+        
+    })
+}
+
+}
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Test</title>
+</head>
+<body>
+   String <input type="text" id="string">
+<input type="button" onclick="reverse()" value="Submit">
+
+<script>
+
+var string=document.getElementById('string').value;
+console.log(string);
+
+function reverse() {
+    console.log(string);
+    var string=document.getElementById('string').value;
+
+    var revArray=string.split("").reverse();
+    console.log(revArray);
+  var revString=revArray.join("");
+
+  var newArray=[];
+  var newArray2=[];
+  console.log(revString);
+
+  var modstring="";
+
+
+
+  
+  for(var x=0;x<string.length;x++)
+   {
+       var code=string.charCodeAt(x);
+
+       
+    if(code<91 && code>64)
+       {
+        modstring+=string.charAt(x);
+    
+       }
+
+       else if(code<123 && code>96)
+       {
+           
+        modstring+=string.charAt(x);
+       }
+
+       else{
+
+        var temp=string.charAt(x);
+
+newArray2[x]=temp;
+       }
+   }
+
+   console.log("CHAR'S :"+modstring);
+console.log("NON CHAR :"+newArray2);
+
+var revArray=modstring.split("").reverse();
+
+console.log(revArray);
+
+
+for(var x=0;x<newArray2.length;x++)
+{
+    var q=newArray2[x];
+    console.log(q);
+    
+    if(q=newArray2[x])
+    {
+
+    }
+    else{
+        newArray2[x]=revArray[x];
+    }
+}
+var mys=newArray2.join("");
+
+console.log("RES : "+mys);
+
+
+}
+
+</script>
+</body>
+</html>

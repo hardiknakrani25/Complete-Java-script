@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>All country api</title>
+    </head>
+<body>
+    <div id="output">Complete javascript Course </div>
+     
+    <input type="button" id="myButton" value="Load Data">
+    
+    <script>
+    
+    window.onload=init;
+    
+    
+    function init() {
+        
+    }
+    
+    function myLoader() {
+        var xHR=new XMLHttpRequest();
+        xHR.onload=rOutput;
+        xHR.open('get','https://restcountries.eu/rest/v2/all',true);
+    }
+    
+    </script>
+</body>
+</html>

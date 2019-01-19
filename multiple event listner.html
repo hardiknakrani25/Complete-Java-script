@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Multiple event listner</title>
+<style>
+.holder{
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    padding: 10px;
+}
+.active{
+    background-color: red;
+}
+</style>
+</head>
+<body>
+    <div id="message"></div>
+    <div class="holder">
+<div id="output"></div></div>
+<script>
+
+var ele=document.querySelector('.holder');
+ele.addEventListener('mouseover',function(){
+
+ele.classList.add('active');
+    console.log('ready mouseover');
+    
+})
+
+ele.addEventListener('mouseout',function(){
+
+//ele.classList.add('active');
+    console.log('ready mouseout');
+    ele.classList.remove('active');
+})
+
+ele.addEventListener('mousemove',coordin);
+
+function coordin() {
+    var html="X"+event.clientX+" |  Y"+event.clientY;
+    console.log(event);
+    document.getElementById('output').innerHTML=html;
+}
+</script>
+
+
+</body>
+</html>

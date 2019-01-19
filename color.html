@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Color game</title>
+  <style>
+  #output{
+      width: 400px;
+      height: 400px;
+      display: block;
+      border: 1px solid black;
+  }
+  </style>
+</head>
+<body>
+    <div id="message">Complete Javascript Course</div>
+<input type="button" value="start" onclick="start()">
+<div id="output"></div> 
+<script>
+
+var arr1=[];
+var arr2=[];
+var myT;
+var loop=0;
+
+
+var output=document.getElementById("output");
+
+function start() {
+    var colorArr=["red","green","blue","yellow"];
+for(var x=0;x<4;x++)
+{
+    var r=colorArr[Math.floor(Math.random()*colorArr.length)]
+    arr1.push(r);
+}
+myT=setTimeout(goWhite,200);
+}
+function goWhite(params) {
+    output.style.backgroundColor="white";
+    myT=setTimeout(gocolor,200);
+}
+
+function gocolor() {
+    output.style.backgroundColor=arr1[loop];
+loop++;
+if(loop>=arr1.length){
+    clearTimeout(myT);
+}
+myT=setTimeout(goWhite,1000);
+
+}
+</script>
+</body>
+</html>

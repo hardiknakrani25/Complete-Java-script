@@ -1,0 +1,8 @@
+<div id="output"></div>
+<script>
+    var output = document.getElementById("output");
+    var login = false;
+    var outputHolder = "";
+    var userOkay = login ? outputHolder = "logout" : outputHolder = "login";
+    output.innerHTML = userOkay;
+</script>

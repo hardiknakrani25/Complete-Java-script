@@ -1,0 +1,19 @@
+<html>
+<body>
+
+<div id="input"></div>
+    <script>
+        var html;
+    var select=prompt("Enter your choice Head or Tails");
+     var res=select=="heads"?1:2;
+     if(Math.floor(Math.random()*2)){
+html="you won the toss";
+     }
+     else{
+         html="you loss the toss";
+     }
+     var set=document.getElementById('input');
+     set.innerHTML=html;
+    </script>  
+</body>    
+</html>  

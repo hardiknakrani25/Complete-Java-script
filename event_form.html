@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <div id="wrapper">Page 1</div>
+<form >
+    first name: <input type="text" id="e1" value="hardik"> <br>
+    Last name: <input type="text" id="e2" value="xbsdf"> <br>
+    <input type="button" onclick="sendInfo()" value="submit">
+
+</form>
+<script>
+function sendInfo() {
+    console.dir(event.target.parentElement);
+    message("test");
+}
+
+function message(m) {
+    document.getElementById("wrapper").innerHTML=m;
+
+}
+</script>
+</body>
+</html>

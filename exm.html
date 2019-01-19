@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Test</title>
+</head>
+<body>
+   String <input type="text" id="string">
+<input type="button" onclick="reverse()" value="Submit">
+
+  <script>
+  
+
+  
+function reverse() {
+
+    var str=document.getElementById('string').value;
+  
+  console.log(str);
+  
+  var r = str.length - 1;
+  var l = 0; 
+
+
+    while (l < r) 
+        { 
+        var code=str.charCodeAt(l);
+        var coder=str.charCodeAt(r);
+            if ((code<91 && code>64) || (code<123 && code>96)) 
+                l++; 
+            else if((coder<91 && coder>64) || (coder<123 && coder>96)) 
+                r--; 
+            else 
+            { 
+                var tmp = str[l]; 
+                str[l] = str[r]; 
+                str[r] = tmp; 
+                l++; 
+                r--; 
+            } 
+        } 
+
+
+console.log(str);
+
+}
+
+  
+
+
+    </script>
+
+</body>
+</html>

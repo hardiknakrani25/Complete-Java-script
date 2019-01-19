@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Reg ex</title>
+
+</head>
+<body>
+    <div id="validate"></div>
+    char
+    <input type="text" value="abcd" id="char">
+    num
+    <input type="text" value="1234" id="number">
+    email
+    <input type="text" value="email@gmail.com" id="email">
+    <input type="button" value="validate" onclick="check()">
+    
+    
+    <script>
+    
+    var emailregx = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z.]+)/ig;
+ var numregx=/\D/;
+ var charregx=/[^a-zA-z]/ig;
+
+function cEmail(e) {
+
+    console.log(e.match(emailregx));
+    
+    return (e.match(emailregx)==null?false:true);
+}
+
+function cNumber(n) {
+    console.log(n.match(numregx));
+    
+    return  (n.match(numregx)== null ? true :false);
+}
+function cChar(c) {
+    console.log(c.match(charregx));
+    
+    return (c.match(charregx)==null ?true:false);
+}
+
+    
+    function check() {
+
+        var tags=document.getElementsByTagName('input');
+      
+          for(var x=0;x<tags.length;x++){
+
+            console.log(tags[x]);
+            if(tags[x].type="text"){
+                if (tags[x].id=="email") {
+                    if(cEmail(tags[x].value))
+                        {
+                            console.log("Email is valid "+tags[x].value);
+                            
+                        }else{
+                            console.log("Email is not valid "+tags[x].value);
+                            
+                        }
+                }
+                if(tags[x].id=="number"){
+                    if (cNumber(tags[x].value)) {
+                        console.log("Num is valid " +tags[x].value);
+                        
+                    }else{
+                        console.log("Num is not valid "+tags[x].value);
+                        
+                    }
+                }
+                 if(tags[x].id=="char"){
+                    if (cChar(tags[x].value)) {
+                        console.log("Char is valid "+tags[x].value);
+                        
+                    }else{
+                        console.log("Char is not valid "+tags[x].value);
+                        
+                    }
+                    
+                 }
+            }
+        
+          } 
+        
+    //     var str=document.getElementById('email').value;
+    // var res=str.match(emailregx);
+    // console.log(res);
+    // return res;
+    
+    
+          }
+    
+    </script>
+</body>
+</html>

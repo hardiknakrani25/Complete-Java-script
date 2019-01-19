@@ -1,0 +1,26 @@
+<html>
+    <body>
+    code:
+    <input type="text" id="code1">
+    <input type="text" id="code2">
+    <input type="text" id="code3">
+    <br>
+    <input type="button" value="crack">
+    <br>
+    <div id="output"></div>
+<script>
+var cCode=[];
+var count=0;
+var output=document.getElementById('output');
+var c1=dodocument.getElementById('code1');
+var c2=dodocument.getElementById('code2');
+var c3=dodocument.getElementById('code3');
+for(var x=0;x<3;x++){
+    cCode.push(Math.floor(Math.random()*9))
+}  
+output.innerHTML=cCode;
+</script>    
+
+</body>
+
+</html>
